@@ -1,7 +1,9 @@
 from django.shortcuts import render 
-
+# باید در ابتدا لیست محصولاتمان را بگیریم 
+from .models import Product
 
 def helloworld(request):
-    return render(request , 'index.html' )
+    all_products = Product.objects.all()
+    return render(request , 'index.html' , {'products' : all_products})
 
 
