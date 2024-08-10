@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from django.core.validators import MinValueValidator , MaxValueValidator
 
 #دسته بندی
 class Category(models.Model):
@@ -26,6 +27,10 @@ class Product(models.Model):
      price = models.DecimalField(default=0 , decimal_places=0 , max_digits=12 )
      category = models.ForeignKey(Category , on_delete=models.CASCADE , default=1)
      picture = models.ImageField(upload_to='upload/product/')
+     star = models.IntegerField(default=0 , validators=[MaxValueValidator(5),MinValueValidator(0)])
+     is_sale = models.BooleanField(default=False) # ایا این محصول در تخفیف ویژه هست یا خیر 
+     sale_price = models.DecimalField(default=0 , decimal_places=0 , max_digits=12 ) #در فروش ویژه قیمتش چقدر هست ؟
+
 
      def __str__(self):
         return self.name
