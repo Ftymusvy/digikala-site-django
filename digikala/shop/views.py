@@ -7,3 +7,5 @@ def helloworld(request):
     return render(request , 'index.html' , {'products' : all_products})
 
 
+def about(request):
+    return render(request , 'about.html')
