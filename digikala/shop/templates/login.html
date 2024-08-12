@@ -13,10 +13,25 @@
 </header>
 <br><br>
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-10 col-md-10">
-            فرم لاگین
-        </div>
+    <div class="row ">
+        <center> 
+            <div class="col-10 ">
+                <form method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                    
+                    <input type="text" class="form-control" name="username" placeholder="نام کاربری را وارد کنید">
+                    
+                    </div>
+                    <div class="mb-3">
+                    
+                    <input type="password" class="form-control" name="password" placeholder="رمز خود را وارد کنید">
+                    </div>
+                
+                    <button type="submit" class="btn btn-secondary">وارد شدن</button>
+                </form>
+            </div>
+        </center>
     </div>
 </div>
 <br><br>

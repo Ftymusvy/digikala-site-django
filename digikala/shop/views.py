@@ -14,8 +14,15 @@ def about(request):
     return render(request , 'about.html')
 
 def login_user(request):
-     return render(request , 'login.html')
+     if request.method == "POST":
+         username = request.POST['username']
+         password = request.POST['password']
 
+         user = authenticate(request , username= username , password=password)
+
+     else:    
+         return render(request , 'login.html')
+   
 
 def logout_user(request):
     logout(request)
