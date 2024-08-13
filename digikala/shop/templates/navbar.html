@@ -10,7 +10,11 @@
                 {% if user.is_authenticated %}
                   <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">خارج شدن</a></li>
                 {% else %}
-                  <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">وارد شدن</a></li>
+                 <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link px-2" href="{% url 'login' %}">وارد شدن</a>
+                    <span class="mx-1">/</span>
+                    <a class="nav-link px-2" href="{% url 'signup' %}">ثبت نام</a>
+                 </li>
                 {% endif %}
                  <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">فروشگاه</a>
