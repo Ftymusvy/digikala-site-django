@@ -68,3 +68,9 @@ def signup_user(request):
 
     else:
         return render(request, 'signup.html', {'form': form})
+
+
+
+def product(request, pk): #pk: product key
+    product = Product.objects.get(id=pk)  #ینی محصولی را پیداکن که ای دی اون برابر  pk محصولی است که کاربر وارد کرده
+    return render(request , 'product.html' , {'product' : product})

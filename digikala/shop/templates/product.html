@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block content %}
+
+
+<br><br>
+<div class="container">
+    <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ product.picture.url }}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5><br><br>
+              <p class="card-text">📌 توضیحات محصول :  {{ product.discription }}</p>
+              
+              {% if product.is_sale and product.sale_price > 0 %}
+                <p class="card-text">
+                     
+                     💰 قیمت :  <strike>{{ product.price | intcomma }} تومان</strike> __ {{ product.sale_price | intcomma }} تومان
+                </p>
+              {% else %}
+               <p class="card-text">💰 قیمت : {{ product.price | intcomma }} تومان</p>
+              {% endif %}
+               
+              <div class="d-flex justify-content small text-warning mb-2">
+                
+                <p class="card-text">امتیازات محصول :</p>
+                 {% with ''|center:product.star as range %}
+
+                    {% for _ in range %}
+                        <div class="bi-star-fill"></div>
+                    {% endfor %}
+                {% endwith %}
+              </div>
+              <p class="card-text"> 🚚 ارسال دیجی کالا</p>
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="card-text"><a class="btn btn-outline-dark mt-auto" href="{% url 'home'  %}">بازگشت به صفحه اصلی</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<br><br><br><br><br><br>
+{% endblock %}
