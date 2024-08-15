@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 # باید در ابتدا لیست محصولاتمان را بگیریم 
-from .models import Product
+from .models import Product , Category
 from django.contrib.auth import authenticate , login , logout
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -74,3 +74,14 @@ def signup_user(request):
 def product(request, pk): #pk: product key
     product = Product.objects.get(id=pk)  #ینی محصولی را پیداکن که ای دی اون برابر  pk محصولی است که کاربر وارد کرده
     return render(request , 'product.html' , {'product' : product})
+
+
+def category(request,cat):
+    cat = cat.replace("-"," ")#به جای فاصله بین کلمات از خط استفاده کند
+    try:
+      category = Category.objects.get(name = cat)
+      products = Product.objects.filter(category = category)
+      return render(request , 'category.html' , {'products' : products , "category": category})
+    except:
+      messages.success(request , ('دسته بندی وجود ندارد'))
+      return redirect("home")
