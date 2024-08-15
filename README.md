@@ -15,7 +15,7 @@
 ### 1. صفحه اصلی
 صفحه اصلی کاربران را به سایت خوش‌آمد گفته و مجموعه‌ای از محصولات ویژه را نمایش می‌دهد.
 
-![صفحه اصلی](https://github.com/Ftymusvy/digikala-site-design/blob/main/main(home).png)
+![صفحه اصلی](https://github.com/Ftymusvy/digikala-site-django/blob/main/main(home).png)
 
 ### 2. صفحه درباره ما
 صفحه درباره ما اطلاعات پس‌زمینه‌ای درباره وبسایت، اهداف آن و تعهد آن به کیفیت و رضایت مشتریان ارائه می‌دهد.
