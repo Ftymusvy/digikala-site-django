@@ -20,17 +20,17 @@
 ### 2. صفحه درباره ما
 صفحه درباره ما اطلاعات پس‌زمینه‌ای درباره وبسایت، اهداف آن و تعهد آن به کیفیت و رضایت مشتریان ارائه می‌دهد.
 
-![صفحه درباره ما](https://github.com/Ftymusvy/digikala-site-design/blob/main/about.png)
+![صفحه درباره ما](https://github.com/Ftymusvy/digikala-site-django/blob/main/about.png)
 
 ### 3. صفحه محصولات
 هر صفحه محصول شامل اطلاعات کاملی درباره کالا، از جمله ویژگی‌ها، قیمت و در دسترس بودن آن است.
 
-![صفحه محصولات](https://github.com/Ftymusvy/digikala-site-design/blob/main/product.png)
+![صفحه محصولات](https://github.com/Ftymusvy/digikala-site-django/blob/main/product.png)
 
 ### 4. صفحه ثبت‌نام
 صفحه ثبت‌نام به کاربران امکان ثبت‌نام و ایجاد حساب کاربری را با وارد کردن اطلاعات شخصی‌شان می‌دهد.
 
-![صفحه ثبت‌نام](https://github.com/Ftymusvy/digikala-site-design/blob/main/signup.png)
+![صفحه ثبت‌نام](https://github.com/Ftymusvy/digikala-site-django/blob/main/signup.png)
 
 ## تماس
 برای سوالات بیشتر یا گزارش مشکلات، می‌توانید با ایمیل زیر در تماس باشید: fatemehmosavinejad202@gmail.com
