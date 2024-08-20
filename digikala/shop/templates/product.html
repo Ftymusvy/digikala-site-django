@@ -35,13 +35,39 @@
                 {% endwith %}
               </div>
               <p class="card-text"> 🚚 ارسال دیجی کالا</p>
-              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="card-text"><a class="btn btn-outline-dark mt-auto" href="{% url 'home'  %}">بازگشت به صفحه اصلی</a></div>
-              </div>
+              <br><br>
+              <button class="btn btn-secondary" type="button" value="{{ product.id }}" id="add-cart">اضافه کردن به سبد</button>
+              <a  href="{% url 'home'  %}" class="btn btn-secondary">بازگشت به صفحه اصلی</a>
             </div>
           </div>
         </div>
       </div>
 </div>
 <br><br><br><br><br><br>
+
+<script>
+
+$(document).on('click' , '#add-cart' , function(e){
+
+  e.preventDefault();
+  $.ajax({
+    type: 'POST' ,
+    url: "{% url 'cart_add' %}",
+    data:{
+      product_id : $('#add-cart').val() ,
+      csrfmiddlewaretoken : '{{ csrf_token }}' ,
+      action : 'post'
+    },
+    success: function(json){
+      console.log(json)
+    },
+
+    error: function(xhr , errmsg , err){
+
+    }
+  });
+
+});
+
+</script>
 {% endblock %}
