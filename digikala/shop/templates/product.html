@@ -59,7 +59,9 @@ $(document).on('click' , '#add-cart' , function(e){
       action : 'post'
     },
     success: function(json){
-      console.log(json)
+      //console.log(json)
+      //برای نمایش تعداد محصولqty
+      document.getElementById('cart_quantity').textContent = json.qty
     },
 
     error: function(xhr , errmsg , err){
