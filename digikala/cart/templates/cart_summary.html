@@ -22,7 +22,7 @@
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">{{ product.name }}</h5><br><br>
+                      <h5 class="card-title">{{ product.name }}</h5><br>
                       <p class="card-text">📌 توضیحات محصول :  {{ product.discription }}</p>
                       
                       {% if product.is_sale and product.sale_price > 0 %}
@@ -34,18 +34,17 @@
                        <p class="card-text">💰 قیمت : {{ product.price | intcomma }} تومان</p>
                       {% endif %}
                        
-                      <div class="d-flex justify-content small text-warning mb-2">
-                        
-                        <p class="card-text">امتیازات محصول :</p>
-                         {% with ''|center:product.star as range %}
-        
-                            {% for _ in range %}
-                                <div class="bi-star-fill"></div>
-                            {% endfor %}
-                        {% endwith %}
-                      </div>
+
                       <p class="card-text"> 🚚 ارسال دیجی کالا</p>
-                      <br><br>
+                      <p class="card-text">تعداد :
+
+                        {% for key,value in quantities.items %}
+                          {% if key == product.id|slugify %}
+                            {{ value }}
+                          {% endif %} 
+                        {% endfor %}    
+                      </p>
+                      <br>
 
                       <a  href="{% url 'home'  %}" class="btn btn-secondary">بازگشت به صفحه اصلی</a>
                     </div>
@@ -56,7 +55,7 @@
         {% endfor %}
         {% else %}
         <br><br>
-         <center> <h3 class="container"> 🛒سبد خرید شما خالی است &#128531;</h3></center>
+         <center> <h3 class="container"> سبد خرید شما خالی است &#128531;</h3></center>
         {% endif %}
   <br><br><br><br><br><br>
 {% endblock %}        
