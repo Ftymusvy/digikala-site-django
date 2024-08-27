@@ -54,6 +54,8 @@
                       </p>
                       <br>
                       <button type="button" data-index={{product.id}} class="btn btn-primary update-cart">ویرایش</button>
+                      <button type="button" data-index={{product.id}} class="btn btn-danger
+                       delete-product">حذف</button>
                       <a  href="{% url 'home'  %}" class="btn btn-secondary">بازگشت به صفحه اصلی</a>
                     </div>
                   </div>
@@ -80,6 +82,33 @@
         product_id : $(this).data('index'),
         product_qty : $('#select' + productid + ' option:selected').text(),
 
+        csrfmiddlewaretoken : '{{ csrf_token }}' ,
+        action : 'post'
+      },
+      success: function(json){
+        //console.log(json)
+        //برای نمایش تعداد محصولqty
+        //document.getElementById('cart_quantity').textContent = json.qty
+        location.reload();
+      },
+  
+      error: function(xhr , errmsg , err){
+  
+      }
+    });
+  
+  });
+
+  $(document).on('click' , '.delete-product' , function(e){
+  
+    e.preventDefault();
+
+
+    $.ajax({
+      type: 'POST' ,
+      url: "{% url 'cart_delete' %}",
+      data:{
+        product_id : $(this).data('index'),
         csrfmiddlewaretoken : '{{ csrf_token }}' ,
         action : 'post'
       },
