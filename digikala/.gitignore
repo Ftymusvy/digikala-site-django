@@ -1,0 +1,60 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+
+# Environment files
+.env
+.venv/
+env/
+ENV/
+venv.bak/
+
+# Logs and coverage reports
+*.log
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+
+# Static files (if using collectstatic)
+<django-project-name>/staticfiles/
+
+# IDE settings (like PyCharm)
+.idea/
+
+# Jupyter and IPython
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# mypy
+.mypy_cache/
+
+# Cython debug symbols
+cython_debug/
+
+
+
